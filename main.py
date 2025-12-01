@@ -1,0 +1,3 @@
+from MVP.app import run_app
+
+run_app()
