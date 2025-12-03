@@ -1,5 +1,5 @@
 CATEGORY_TO_BBOX = {
-                # x1, y1, width, height
+                # x, y, width, height
     "country": [0.5158, 0.2448, 0.4060, 0.0700],
     "items": [0.0656, 0.4990, 0.6134, 0.2150],
     "weight": [0.6824, 0.4658, 0.2382, 0.2482]
