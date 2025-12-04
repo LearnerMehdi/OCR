@@ -328,3 +328,32 @@ The Gradio JSON output currently shows **one confidence score per key (country, 
   OSError: (External) CUDA error(100), no CUDA-capable device is detected. 
     [Hint: Please search for the error code(100) on website (https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html#group__CUDART__TYPES_1g3f51e3575c2178246db0a94a430e0038) to get Nvidia's official solution and advice about CUDA Error.] (at /paddle/paddle/phi/backends/gpu/cuda/cuda_info.cc:66)
   ```
+
+- The reason for this error is the missing CUDA drivers. 
+  ```bash
+    source venv_ubuntu@ambitious-bohr:~$ source venv_310/bin/activate
+    (venv_310) ubuntu@ambitious-bohr:~$ pip3 freeze | grep nvidia
+    (venv_310) ubuntu@ambitious-bohr:~$ 
+  ```
+  
+- Which is not the case with latest releases:
+
+  ```bash
+    ubuntu@ambitious-bohr:~$ source venv_paddle/bin/activate
+    (venv_paddle) ubuntu@ambitious-bohr:~$ pip freeze | grep nvidia
+    nvidia-cublas-cu12==12.6.4.1
+    nvidia-cuda-cccl-cu12==12.6.77
+    nvidia-cuda-cupti-cu12==12.6.80
+    nvidia-cuda-nvrtc-cu12==12.6.77
+    nvidia-cuda-runtime-cu12==12.6.77
+    nvidia-cudnn-cu12==9.5.1.17
+    nvidia-cufft-cu12==11.3.0.4
+    nvidia-cufile-cu12==1.11.1.6
+    nvidia-curand-cu12==10.3.7.77
+    nvidia-cusolver-cu12==11.7.1.2
+    nvidia-cusparse-cu12==12.5.4.2
+    nvidia-cusparselt-cu12==0.6.3
+    nvidia-nccl-cu12==2.25.1
+    nvidia-nvjitlink-cu12==12.6.85
+    nvidia-nvtx-cu12==12.6.77
+  ```
