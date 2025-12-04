@@ -332,7 +332,7 @@ The Gradio JSON output currently shows **one confidence score per key (country, 
 - The reason for this error is the missing CUDA drivers. 
   ```bash
     source venv_ubuntu@ambitious-bohr:~$ source venv_310/bin/activate
-    (venv_310) ubuntu@ambitious-bohr:~$ pip3 freeze | grep nvidia
+    (venv_310) ubuntu@ambitious-bohr:~$ pip freeze | grep nvidia
     (venv_310) ubuntu@ambitious-bohr:~$ 
   ```
   
